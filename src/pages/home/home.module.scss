@@ -1,0 +1,22 @@
+@import '../../assets/styles/variable.scss';
+
+.container {
+
+  // 概括迷你图
+  .generalize {
+    @include box;
+    height: 180px;
+    margin-bottom: $space;
+  }
+
+  .top {
+    @include box;
+    height: 300px;
+    margin-bottom: $space;
+  }
+
+  .bottom {
+    @include box;
+    height: 300px;
+  }
+}

@@ -1,0 +1,23 @@
+/*
+ * @LastEditors: 七大大
+ * @Date: 2020-08-18
+ * @LastEditTime: 2020-08-18
+ * @FilePath: \myTarod:\products\antd-demo-ts\src\assets\styles\variable.scss
+ * @Description: scss变量设置
+ */
+//  !变量
+// 颜色 
+$primary-color: #13c2c2; // 主题色
+$gray11:#1f1f1f; // 导航的颜色
+$gray12:#141414; // 内部模块
+$gray13:#000000; // 内部模块
+// 间距
+$space:15px;
+
+// !混入
+// 内部模块样式
+@mixin box {
+  background: $gray12;
+  padding: $space;
+  border-radius: 5px;
+}

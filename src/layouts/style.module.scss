@@ -1,0 +1,64 @@
+/*
+ * @LastEditors: 七大大
+ * @Date: 2020-08-18
+ * @LastEditTime: 2020-08-19
+ * @FilePath: \myTarod:\products\antd-demo-ts\src\layouts\style.module.scss
+ * @Description: 外架构的样式
+ */
+@import '../assets/styles/variable.scss';
+
+.root_box {
+  min-height: 100vh !important;
+
+
+  .logo {
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    font-size: 30px;
+    color: transparent;
+    font-weight: 700;
+    -webkit-text-stroke: 1px hsla(0, 0%, 100%, 0.5);
+    background-size: 250px 80px;
+    background-image: url(../assets/images/logo.jpg);
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $space;
+    background: url(../assets/images/bg-bd.png);
+    background-size: 50%;
+
+    .switch {
+      font-size: 20px;
+      padding: 0 $space;
+    }
+
+    .user {
+      padding: 0 $space;
+    }
+  }
+
+  .content {
+    height: calc(100vh - 145px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0 $space;
+    background: url(../assets/images/bg-bg.svg);
+  }
+
+  .footer {
+    height: 32px;
+    // background: $gray12;
+    margin-top: $space;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../assets/images/logo.jpg);
+    background-size: 250px 80px;
+    background-position-y: -10px;
+    ;
+  }
+}
