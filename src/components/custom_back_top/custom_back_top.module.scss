@@ -1,0 +1,19 @@
+@import '../../assets/styles/variable.scss';
+
+.back_top {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  bottom: 70px;
+  right: 50px;
+  z-index: 999;
+  line-height: 40px;
+  border-radius: 4px;
+  background-color: $primary-color;
+  color: #fff;
+  text-align: center;
+  font-size: 20px;
+  cursor: pointer;
+  // zoom: 2
+  transform: rotate(7deg)
+}

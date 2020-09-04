@@ -1,8 +1,8 @@
 /*
  * @LastEditors: 七大大
  * @Date: 2020-08-18
- * @LastEditTime: 2020-08-19
- * @FilePath: \myTarod:\products\antd-demo-ts\src\pages\home\index.tsx
+ * @LastEditTime: 2020-09-02
+ * @FilePath: \myantdd:\products\react_antd_components\src\pages\home\index.tsx
  * @Description: 首页
  */
 import React from 'react';
@@ -13,8 +13,8 @@ import {
   TinyColumn,
   TinyArea,
 } from '@ant-design/charts';
-import QueueAnim from 'rc-queue-anim';
 import styles from './home.module.scss';
+import Demo from '../demo';
 const randomData = (num: number, max: number, min: number) => {
   const data = [];
   for (let i = 0; i < num; i++) {
@@ -91,7 +91,13 @@ const DivHome = () => {
           <TinyArea {...tinyAreaConfig} className={styles.generalize} />
         </Col>
       </Row>
-      <div className={styles.top}>home2</div>
+      <div className={styles.top}>
+        <Demo />
+      </div>
+      <div className={styles.top}>home3</div>
+      <div className={styles.top}>home3</div>
+      <div className={styles.top}>home3</div>
+      <div className={styles.top}>home3</div>
       <div className={styles.top}>home3</div>
       <div className={styles.bottom}>home4</div>
     </div>

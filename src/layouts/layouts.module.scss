@@ -1,8 +1,8 @@
 /*
  * @LastEditors: 七大大
  * @Date: 2020-08-18
- * @LastEditTime: 2020-08-19
- * @FilePath: \myTarod:\products\antd-demo-ts\src\layouts\style.module.scss
+ * @LastEditTime: 2020-09-04
+ * @FilePath: \myantdd:\products\react_antd_components\src\layouts\layouts.module.scss
  * @Description: 外架构的样式
  */
 @import '../assets/styles/variable.scss';
@@ -30,6 +30,8 @@
     margin-bottom: $space;
     background: url(../assets/images/bg-bd.png);
     background-size: 50%;
+    position: relative;
+    z-index: 99;
 
     .switch {
       font-size: 20px;
@@ -46,7 +48,7 @@
     overflow-y: auto;
     overflow-x: hidden;
     padding: 0 $space;
-    background: url(../assets/images/bg-bg.svg);
+    position: relative;
   }
 
   .footer {
