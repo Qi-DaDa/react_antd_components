@@ -8,26 +8,15 @@
 
 import React, { useState } from 'react';
 import { Layout, Avatar } from 'antd';
-import {
-  UserOutlined,
-  MenuUnfoldOutlined,
-  MenuFoldOutlined,
-} from '@ant-design/icons';
+import { UserOutlined } from '@ant-design/icons';
 import styles from '../../layouts.module.scss';
 const { Header } = Layout;
 
-interface Props {
-  collapsed: boolean; // 侧边栏控制
-  onCollapsed: () => void; // 控制侧边事件
-}
+interface Props {}
 
 const LayoutHeader: React.FunctionComponent<Props> = (props) => {
-  const { collapsed, onCollapsed } = props;
   return (
     <Header className={styles.header}>
-      <div className={styles.switch} onClick={onCollapsed}>
-        {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-      </div>
       <div className={styles.user}>
         <Avatar icon={<UserOutlined />} />
       </div>

@@ -11,6 +11,7 @@ import {
 import QueueAnim from 'rc-queue-anim';
 import DivHome from '../pages/home';
 import LayoutHeader from './components/layout_header';
+import LayoutSider from './components/layout_sider';
 import styles from './layouts.module.scss';
 import CustomBackTop from '../components/custom_back_top';
 const Particles = require('react-particles-js');
@@ -89,39 +90,16 @@ const ParticlesParams = {
   retina_detect: true,
 };
 const LayoutFrame = () => {
-  const [collapsed, setCollapsed] = useState(false);
   return (
     <Layout className={styles.root_box}>
       {/* 背景 */}
       <Particles style={{ position: 'absolute' }} params={ParticlesParams} />
       {/* 侧边栏 */}
-      <Sider collapsible collapsed={collapsed} trigger={null}>
-        <div className={styles.logo}>DIV</div>
-        <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
-          <Menu.Item key="1" icon={<PieChartOutlined />}>
-            Option 1
-          </Menu.Item>
-          <Menu.Item key="2" icon={<DesktopOutlined />}>
-            Option 2
-          </Menu.Item>
-          <SubMenu key="sub1" icon={<UserOutlined />} title="User">
-            <Menu.Item key="3">Tom</Menu.Item>
-            <Menu.Item key="4">Bill</Menu.Item>
-            <Menu.Item key="5">Alex</Menu.Item>
-          </SubMenu>
-          <SubMenu key="sub2" icon={<TeamOutlined />} title="Team">
-            <Menu.Item key="6">Team 1</Menu.Item>
-            <Menu.Item key="8">Team 2</Menu.Item>
-          </SubMenu>
-        </Menu>
-      </Sider>
+      <LayoutSider />
       {/* 主体 */}
       <Layout>
         {/* 头部 */}
-        <LayoutHeader
-          collapsed={collapsed}
-          onCollapsed={() => setCollapsed(!collapsed)}
-        />
+        <LayoutHeader />
         {/* 内容 */}
         <QueueAnim
           type="right"

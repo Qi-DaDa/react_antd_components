@@ -25,9 +25,9 @@
 
   .header {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
-    margin-bottom: $space;
+    margin-bottom: 5px;
     background: url(../assets/images/bg-bd.png);
     background-size: 50%;
     position: relative;
@@ -43,24 +43,29 @@
     }
   }
 
+  .sider {
+    box-shadow: 0 0px 0px rgba(19, 194, 194, 0.15),
+      0 1px 1px rgba(19, 194, 194, 0.15),
+      0 2px 2px rgba(19, 194, 194, 0.15),
+      0 4px 4px rgba(19, 194, 194, 0.15);
+  }
+
   .content {
     height: calc(100vh - 145px);
     overflow-y: auto;
     overflow-x: hidden;
-    padding: 0 $space;
+    padding: 0 $space $space;
     position: relative;
   }
 
   .footer {
     height: 32px;
-    // background: $gray12;
-    margin-top: $space;
+    // margin-top: $space;
     display: flex;
     justify-content: center;
     align-items: center;
     background-image: url(../assets/images/logo.jpg);
     background-size: 250px 80px;
-    background-position-y: -10px;
-    ;
+    background-position-y: -5px;
   }
 }
