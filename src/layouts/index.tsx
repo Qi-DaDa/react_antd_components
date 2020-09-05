@@ -1,13 +1,5 @@
 import React, { useState } from 'react';
-import { Layout, Menu, Avatar } from 'antd';
-import {
-  DesktopOutlined,
-  PieChartOutlined,
-  TeamOutlined,
-  UserOutlined,
-  MenuUnfoldOutlined,
-  MenuFoldOutlined,
-} from '@ant-design/icons';
+import { Layout, Menu, Typography } from 'antd';
 import QueueAnim from 'rc-queue-anim';
 import DivHome from '../pages/home';
 import LayoutHeader from './components/layout_header';
@@ -102,13 +94,17 @@ const LayoutFrame = () => {
         <LayoutHeader />
         {/* 内容 */}
         <QueueAnim
+          id="aa"
           type="right"
           duration={1000}
           component={Content}
           className={styles.content}
         >
-          <DivHome key="DivHome" />
-          <CustomBackTop />
+          <div>
+            <DivHome key="DivHome" />
+          </div>
+          {/* 回到顶部 */}
+          <CustomBackTop elementById="aa" />
         </QueueAnim>
         <Footer className={styles.footer}> 2020 @ DIV</Footer>
       </Layout>

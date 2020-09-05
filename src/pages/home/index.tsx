@@ -1,12 +1,12 @@
 /*
  * @LastEditors: 七大大
  * @Date: 2020-08-18
- * @LastEditTime: 2020-09-02
+ * @LastEditTime: 2020-09-04
  * @FilePath: \myantdd:\products\react_antd_components\src\pages\home\index.tsx
  * @Description: 首页
  */
 import React from 'react';
-import { Row, Col } from 'antd';
+import { Row, Col, Typography } from 'antd';
 import {
   Progress,
   RingProgress,
@@ -94,7 +94,11 @@ const DivHome = () => {
       <div className={styles.top}>
         <Demo />
       </div>
-      <div className={styles.top}>home3</div>
+      <div className={styles.top}>
+        <Typography.Paragraph
+          copyable={{ text: 'Hello, Ant Design!' }}
+        ></Typography.Paragraph>
+      </div>
       <div className={styles.top}>home3</div>
       <div className={styles.top}>home3</div>
       <div className={styles.top}>home3</div>

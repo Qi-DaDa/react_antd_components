@@ -1,14 +1,14 @@
 /*
  * @LastEditors: 七大大
  * @Date: 2020-08-20
- * @LastEditTime: 2020-08-20
+ * @LastEditTime: 2020-09-05
  * @FilePath: \myantdd:\products\react_antd_components\src\services\network.ts
  * @Description: 对axios进行封装
  */
 
 import Axios from 'axios';
-// import NProgress from 'nprogress';
-// import 'nprogress/nprogress.css';
+import NProgress from 'nprogress';
+import 'nprogress/nprogress.css';
 import { message, notification } from 'antd';
 
 let axiosinster = Axios.create();
@@ -29,7 +29,7 @@ const post = (params: Options) => {
 axiosinster.interceptors.request.use(
   (config) => {
     // 配置请求信息
-    // NProgress.start();
+    NProgress.start();
     return config;
   },
   (error) => {
@@ -42,7 +42,7 @@ axiosinster.interceptors.request.use(
 axiosinster.interceptors.response.use(
   (response) => {
     // 返回响应信息
-    // NProgress.done(true);
+    NProgress.done(true);
     return response.data;
   },
   (error) => {
@@ -51,7 +51,7 @@ axiosinster.interceptors.response.use(
       message: `${error}`,
       placement: 'bottomLeft',
     });
-    // NProgress.done(true);
+    NProgress.done(true);
     // return error
   }
 );
