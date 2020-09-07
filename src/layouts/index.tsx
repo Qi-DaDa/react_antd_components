@@ -6,6 +6,7 @@ import LayoutHeader from './components/layout_header';
 import LayoutSider from './components/layout_sider';
 import styles from './layouts.module.scss';
 import CustomBackTop from '../components/custom_back_top';
+// import Particles from 'react-particles-js';
 const Particles = require('react-particles-js');
 const { Content, Sider, Footer } = Layout;
 const { SubMenu } = Menu;
