@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { POST_TABLE_API } from '../../../services/api';
+import { POST_TABLE_API } from '../../../../services/api';
 const useHeader = (props: any) => {
   console.log(props);
 

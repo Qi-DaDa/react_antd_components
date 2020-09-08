@@ -1,0 +1,19 @@
+@import '../../assets/styles/variable.scss';
+
+.login {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .container {
+    @include box;
+    padding-bottom: 0;
+  }
+
+}
+
+input {
+  border: none !important;
+}

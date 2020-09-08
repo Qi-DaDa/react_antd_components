@@ -1,11 +1,11 @@
 /*
  * @LastEditors: 七大大
  * @Date: 2020-08-18
- * @LastEditTime: 2020-09-04
- * @FilePath: \myantdd:\products\react_antd_components\src\layouts\layouts.module.scss
+ * @LastEditTime: 2020-09-07
+ * @FilePath: \myantdd:\products\react_antd_components\src\layouts\container\layouts.module.scss
  * @Description: 外架构的样式
  */
-@import '../assets/styles/variable.scss';
+@import '../../assets/styles/variable.scss';
 
 .root_box {
   min-height: 100vh !important;
@@ -20,7 +20,7 @@
     font-weight: 700;
     -webkit-text-stroke: 1px hsla(0, 0%, 100%, 0.5);
     background-size: 250px 80px;
-    background-image: url(../assets/images/logo.jpg);
+    background-image: url(../../assets/images/logo.jpg);
   }
 
   .header {
@@ -28,7 +28,7 @@
     justify-content: flex-end;
     align-items: center;
     margin-bottom: 5px;
-    background: url(../assets/images/bg-bd.png);
+    background: url(../../assets/images/bg-bd.png);
     background-size: 50%;
     position: relative;
     z-index: 99;
@@ -64,7 +64,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(../assets/images/logo.jpg);
+    background-image: url(../../assets/images/logo.jpg);
     background-size: 250px 80px;
     background-position-y: -5px;
   }

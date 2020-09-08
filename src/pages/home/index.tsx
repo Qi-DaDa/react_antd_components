@@ -1,7 +1,7 @@
 /*
  * @LastEditors: 七大大
  * @Date: 2020-08-18
- * @LastEditTime: 2020-09-04
+ * @LastEditTime: 2020-09-08
  * @FilePath: \myantdd:\products\react_antd_components\src\pages\home\index.tsx
  * @Description: 首页
  */
@@ -13,8 +13,12 @@ import {
   TinyColumn,
   TinyArea,
 } from '@ant-design/charts';
-import styles from './home.module.scss';
 import Demo from '../demo';
+import { OverPack, Parallax } from 'rc-scroll-anim';
+import TweenOne from 'rc-tween-one';
+import QueueAnim from 'rc-queue-anim';
+import styles from './home.module.scss';
+
 const randomData = (num: number, max: number, min: number) => {
   const data = [];
   for (let i = 0; i < num; i++) {
@@ -76,7 +80,11 @@ const DivHome = () => {
     ],
   };
   return (
-    <div className={styles.container}>
+    // <div className={styles.container}>
+    <OverPack className={styles.container} style={{ overflow: 'hidden' }}>
+      <div className={styles.top}>
+        <Demo />
+      </div>
       <Row gutter={16}>
         <Col span={6}>
           <Progress {...progressConfig} className={styles.generalize} />
@@ -91,20 +99,28 @@ const DivHome = () => {
           <TinyArea {...tinyAreaConfig} className={styles.generalize} />
         </Col>
       </Row>
-      <div className={styles.top}>
-        <Demo />
-      </div>
-      <div className={styles.top}>
-        <Typography.Paragraph
-          copyable={{ text: 'Hello, Ant Design!' }}
-        ></Typography.Paragraph>
-      </div>
-      <div className={styles.top}>home3</div>
-      <div className={styles.top}>home3</div>
-      <div className={styles.top}>home3</div>
-      <div className={styles.top}>home3</div>
-      <div className={styles.bottom}>home4</div>
-    </div>
+      <QueueAnim type="bottom" key="queue">
+        <div className={styles.top} key="home1">
+          home1
+        </div>
+        <div className={styles.top} key="home2">
+          home2
+        </div>
+        <div className={styles.top} key="home3">
+          home3
+        </div>
+        <div className={styles.top} key="home4">
+          home4
+        </div>
+        <div className={styles.top} key="home5">
+          home5
+        </div>
+        <div className={styles.bottom} key="home6">
+          home6
+        </div>
+      </QueueAnim>
+    </OverPack>
+    //  </div>
   );
 };
 export default DivHome;
