@@ -1,0 +1,182 @@
+@import '../../assets/styles/variable.scss';
+
+.divvideo {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  // overflow: hidden;
+}
+
+.video {
+  height: calc(100% - 50px);
+  margin-bottom: $space;
+}
+
+.increased {
+  height: 35px;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  .input {
+    flex: 1;
+
+    input {
+      height: 35px;
+      padding: 0 15px;
+      width: 100%;
+      font-size: inherit;
+      font-family: inherit;
+      background-color: transparent;
+      border: 1px solid transparent;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    input:focus {
+      outline: none;
+    }
+
+    span {
+      position: absolute;
+      background-color: #3cefff;
+      transition: transform 0.5s ease;
+    }
+
+    .bottom,
+    .top {
+      height: 1px;
+      left: 0;
+      right: 0;
+      transform: scaleX(0);
+    }
+
+    .left,
+    .right {
+      width: 1px;
+      top: 0;
+      bottom: 0;
+      transform: scaleY(0);
+    }
+
+    .bottom {
+      bottom: 0;
+      transform-origin: bottom right;
+    }
+
+    input:focus~.bottom {
+      transform-origin: bottom left;
+      transform: scaleX(1);
+    }
+
+    .right {
+      right: 0;
+      transform-origin: top right;
+    }
+
+    input:focus~.right {
+      transform-origin: bottom right;
+      transform: scaleY(1);
+    }
+
+    .top {
+      top: 0;
+      transform-origin: top left;
+    }
+
+    input:focus~.top {
+      transform-origin: top right;
+      transform: scaleX(1);
+    }
+
+    .left {
+      left: 0;
+      transform-origin: bottom left;
+    }
+
+    input:focus~.left {
+      transform-origin: top left;
+      transform: scaleY(1);
+    }
+  }
+
+  .buttom {
+    // width: 100px;
+    text-align: center;
+    margin: 2px;
+
+    button {
+      z-index: 1;
+      position: relative;
+      font-size: inherit;
+      font-family: inherit;
+      height: 33px;
+      padding: 0 5px;
+      outline: none;
+      border: none;
+      background-color: hsl(236, 32%, 26%);
+      overflow: hidden;
+      transition: color 0.4s ease-in-out;
+    }
+
+    button::before {
+      content: '';
+      z-index: -1;
+      position: absolute;
+      bottom: 100%;
+      right: 100%;
+      width: 1em;
+      height: 1em;
+      border-radius: 50%;
+      background-color: #3cefff;
+      transform-origin: center;
+      transform: translate3d(50%, 50%, 0) scale3d(0, 0, 0);
+      transition: transform 0.45s ease-in-out;
+    }
+
+    button:hover {
+      cursor: pointer;
+      // color: #161616;
+    }
+
+    button:hover::before {
+      transform: translate3d(50%, 50%, 0) scale3d(15, 15, 15);
+    }
+  }
+}
+
+.bullet {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+
+  .bullet_single {
+    position: relative;
+    left: 100%;
+    border-radius: 5px;
+    // border: 1px solid $primary-color;
+    animation-name: danmu; // 动画名称
+    animation-duration: 20s; // 动画时长
+    animation-timing-function: linear; // 动画速度
+    // animation-iteration-count: infinite; // 动画次数
+    animation-direction: normal; // 逆向播放
+    animation-play-state: running; // 暂停/播放
+
+    &:hover {
+      animation-play-state: paused; // 暂停/播放
+    }
+  }
+}
+
+@keyframes danmu {
+  from {
+    left: 100%;
+    transform: translateX(0);
+  }
+
+  to {
+    left: 0;
+    transform: translateX(-100%);
+  }
+}

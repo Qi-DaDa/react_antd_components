@@ -1,7 +1,7 @@
 /*
  * @LastEditors: 七大大
  * @Date: 2020-08-18
- * @LastEditTime: 2020-09-07
+ * @LastEditTime: 2020-09-09
  * @FilePath: \myantdd:\products\react_antd_components\src\layouts\container\layouts.module.scss
  * @Description: 外架构的样式
  */
@@ -25,7 +25,7 @@
 
   .header {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 5px;
     background: url(../../assets/images/bg-bd.png);
@@ -33,13 +33,14 @@
     position: relative;
     z-index: 99;
 
-    .switch {
-      font-size: 20px;
-      padding: 0 $space;
+    .badsoup:hover {
+      color: $primary-color;
     }
 
+    .badsoup,
     .user {
       padding: 0 $space;
+      cursor: pointer;
     }
   }
 

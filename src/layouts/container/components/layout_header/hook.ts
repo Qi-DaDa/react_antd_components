@@ -1,15 +1,20 @@
 import { useState, useEffect } from 'react';
-import { POST_TABLE_API } from '../../../../services/api';
+import { GET_BABSOUP_API } from '../../../../services/api';
 const useHeader = (props: any) => {
-  console.log(props);
-
+  const [badsoup, setbadsoup] = useState(''); // 毒鸡汤
   useEffect(() => {
-    getTips();
+    getBadsoupApi();
+    // setInterval(() => {
+    //   getBadsoupApi();
+    // }, 30000);
   }, []);
-  const getTips = async () => {
-    const resData = await POST_TABLE_API();
-    console.log(resData);
+  // 获取毒鸡汤
+  const getBadsoupApi = async () => {
+    const resData: any = await GET_BABSOUP_API();
+    if (resData?.status === 1) {
+      setbadsoup(resData.txt || '鸡汤在紧急配送中···');
+    }
   };
-  return { aa: '123' };
+  return { badsoup, getBadsoupApi };
 };
 export default useHeader;

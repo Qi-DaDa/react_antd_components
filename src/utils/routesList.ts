@@ -8,7 +8,9 @@ import Demo from '../pages/demo';
 import Login from '../layouts/login';
 import Container from '../layouts/container';
 import Home from '../pages/home';
-import Mine from '../pages/mine';
+import DivMethods from '../pages/div_methods';
+import DivVideo from '../pages/video';
+import DivMine from '../pages/mine';
 // 页面路由
 export const pagesRoute = [
   {
@@ -35,17 +37,32 @@ export const pagesRoute = [
 ];
 export const navsRoute = [
   {
-    key: '/div/home',
-    path: '/div/home',
+    key: '/div/methods',
+    path: '/div/methods',
     exact: true,
     title: '首页',
     component: Home,
+  },
+  {
+    key: '/div/home',
+    path: '/div/home',
+    exact: true,
+    title: '方法',
+    component: DivMethods,
+  },
+
+  {
+    key: '/div/video',
+    path: '/div/vide',
+    exact: true,
+    title: '视频',
+    component: DivVideo,
   },
   {
     key: '/div/mine',
     path: '/div/mine',
     exact: true,
     title: '个人中心',
-    component: Mine,
+    component: DivMine,
   },
 ];

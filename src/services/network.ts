@@ -1,7 +1,7 @@
 /*
  * @LastEditors: 七大大
  * @Date: 2020-08-20
- * @LastEditTime: 2020-09-05
+ * @LastEditTime: 2020-09-09
  * @FilePath: \myantdd:\products\react_antd_components\src\services\network.ts
  * @Description: 对axios进行封装
  */

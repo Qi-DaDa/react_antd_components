@@ -1,11 +1,11 @@
 /*
  * @LastEditors: 七大大
  * @Date: 2020-08-18
- * @LastEditTime: 2020-09-08
+ * @LastEditTime: 2020-09-21
  * @FilePath: \myantdd:\products\react_antd_components\src\pages\home\index.tsx
  * @Description: 首页
  */
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Row, Col, Typography } from 'antd';
 import {
   Progress,
@@ -13,11 +13,14 @@ import {
   TinyColumn,
   TinyArea,
 } from '@ant-design/charts';
-import Demo from '../demo';
+import ReactEcharts from 'echarts-for-react';
+import { Carousel } from 'antd';
 import { OverPack, Parallax } from 'rc-scroll-anim';
 import TweenOne from 'rc-tween-one';
 import QueueAnim from 'rc-queue-anim';
+import { GET_BING_API } from '../../services/api';
 import styles from './home.module.scss';
+import { echartOption } from '../../utils/echarts';
 
 const randomData = (num: number, max: number, min: number) => {
   const data = [];
@@ -27,6 +30,18 @@ const randomData = (num: number, max: number, min: number) => {
   return data;
 };
 const DivHome = () => {
+  const [carouselList, setCarouselList] = useState([]); // 轮播图数据
+
+  useEffect(() => {
+    getBingApi();
+  }, []);
+
+  // 获取必应七图
+  const getBingApi = async () => {
+    const resData = await GET_BING_API();
+    setCarouselList(resData.data);
+  };
+
   const progressConfig = {
     width: 100,
     height: 160,
@@ -79,15 +94,25 @@ const DivHome = () => {
       },
     ],
   };
+
   return (
-    // <div className={styles.container}>
-    <OverPack className={styles.container} style={{ overflow: 'hidden' }}>
+    <div className={styles.container}>
+      {/*  <OverPack className={styles.container} style={{ overflow: 'hidden' }}> */}
       <div className={styles.top}>
-        <Demo />
+        <Carousel autoplay>
+          {carouselList.map((item, key) => (
+            <div className={styles.carousel} key={key}>
+              <div
+                className={styles.single}
+                style={{ backgroundImage: `url(${item})` }}
+              ></div>
+            </div>
+          ))}
+        </Carousel>
       </div>
       <Row gutter={16}>
         <Col span={6}>
-          <Progress {...progressConfig} className={styles.generalize} />
+          {/* <Progress {...progressConfig} className={styles.generalize} /> */}
         </Col>
         <Col span={6}>
           <RingProgress {...ringProgressConfig} className={styles.generalize} />
@@ -99,28 +124,54 @@ const DivHome = () => {
           <TinyArea {...tinyAreaConfig} className={styles.generalize} />
         </Col>
       </Row>
-      <QueueAnim type="bottom" key="queue">
-        <div className={styles.top} key="home1">
-          home1
+      {/* <QueueAnim type="bottom" key="queue"> */}
+      <div className={styles.top} key="home1">
+        home1
+      </div>
+      <div className={styles.top} key="home2">
+        <div className={styles.bullet_box}>
+          {['111', '2222', '3333', '4444', '5555'].map((item, key) => (
+            <div key={key}>
+              <span
+                className={styles.bullet}
+                style={{ animationDelay: `${Math.ceil(Math.random() * 10)}s` }}
+              >
+                {item}
+              </span>
+            </div>
+          ))}
         </div>
-        <div className={styles.top} key="home2">
-          home2
-        </div>
-        <div className={styles.top} key="home3">
-          home3
-        </div>
-        <div className={styles.top} key="home4">
-          home4
-        </div>
-        <div className={styles.top} key="home5">
-          home5
-        </div>
-        <div className={styles.bottom} key="home6">
-          home6
-        </div>
-      </QueueAnim>
-    </OverPack>
-    //  </div>
+      </div>
+      <div className={styles.top} key="home3">
+        home3
+      </div>
+      <div className={styles.top} key="home4">
+        home4
+      </div>
+      <div className={styles.top} key="home5">
+        <ReactEcharts
+          option={{
+            xAxis: echartOption.xAxis,
+            yAxis: echartOption.yAxis,
+            series: echartOption.barSeries,
+          }}
+        />
+      </div>
+      <div className={styles.bottom} key="home6">
+        <ReactEcharts
+          style={{ height: '100%' }}
+          option={{
+            color: echartOption.color,
+            grid: echartOption.grid,
+            xAxis: echartOption.xAxis,
+            yAxis: echartOption.yAxis,
+            series: echartOption.lineSeries,
+          }}
+        />
+      </div>
+      {/* </QueueAnim> */}
+      {/* </OverPack> */}
+    </div>
   );
 };
 export default DivHome;

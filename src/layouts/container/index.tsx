@@ -23,7 +23,7 @@ const LayoutFrame = () => {
         <LayoutHeader />
         {/* 内容 */}
         <QueueAnim
-          id="backTop"
+          id="scrollId"
           type="right"
           duration={1000}
           component={Content}
@@ -31,7 +31,7 @@ const LayoutFrame = () => {
         >
           <NavsRoute />
           {/* 回到顶部 */}
-          <CustomBackTop elementById="backTop" />
+          <CustomBackTop elementById="scrollId" />
         </QueueAnim>
         <Footer className={styles.footer}> 2020 @ DIV</Footer>
       </Layout>

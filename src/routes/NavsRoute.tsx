@@ -1,8 +1,8 @@
 /*
  * @LastEditors: 七大大
  * @Date: 2020-09-07
- * @LastEditTime: 2020-09-08
- * @FilePath: \myantdd:\products\react_antd_components\src\routes\navsRoute.tsx
+ * @LastEditTime: 2020-09-11
+ * @FilePath: \myantdd:\products\react_antd_components\src\routes\NavsRoute.tsx
  * @Description: 路由导航
  */
 import React, { useState } from 'react';
@@ -28,7 +28,7 @@ const NavsRoute = () => {
           ></Route>
         );
       })}
-      <Redirect exact from="/" to={navsRoute[0].path}></Redirect>;
+      <Redirect exact from="/" to={navsRoute[0].path}></Redirect>
     </>
   );
 };

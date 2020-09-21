@@ -1,12 +1,12 @@
 /*
  * @LastEditors: 七大大
  * @Date: 2020-08-21
- * @LastEditTime: 2020-09-06
- * @FilePath: \myantdd:\products\react_antd_components\src\layouts\components\layout_header\index.tsx
+ * @LastEditTime: 2020-09-09
+ * @FilePath: \myantdd:\products\react_antd_components\src\layouts\container\components\layout_header\index.tsx
  * @Description: 布局头部
  */
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Layout, Avatar } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import useHeader from './hook';
@@ -16,12 +16,13 @@ const { Header } = Layout;
 interface Props {}
 
 const LayoutHeader: React.FunctionComponent<Props> = (props) => {
-  const { aa } = useHeader('1234');
-  console.log(aa);
-
-  useEffect(() => {}, []);
+  const { badsoup, getBadsoupApi } = useHeader(props);
   return (
     <Header className={styles.header}>
+      <div></div>
+      <div className={styles.badsoup} onClick={getBadsoupApi}>
+        <span>{badsoup}</span>
+      </div>
       <div className={styles.user}>
         <Avatar icon={<UserOutlined />} />
       </div>
