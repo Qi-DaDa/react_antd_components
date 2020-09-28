@@ -7,7 +7,10 @@ const App = () => {
   return (
     <>
       {/* 背景 */}
-      <Particles style={{ position: 'absolute' }} params={particlesParams} />
+      <Particles
+        style={{ position: 'fixed', top: 0 }}
+        params={particlesParams}
+      />
       {/* 页面路由 */}
       <PagesRoute />
     </>

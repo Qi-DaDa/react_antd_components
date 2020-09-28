@@ -1,0 +1,124 @@
+@import '../../assets/styles/variable.scss';
+
+.div_index {
+  .title {
+    background: $gray12;
+    height: 48px;
+    // position: sticky;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 15px;
+
+    .left {
+      .logo {
+        height: 48px;
+        width: 200px;
+        letter-spacing: 15px;
+        line-height: 48px;
+        text-align: center;
+        font-size: 40px;
+        color: transparent;
+        font-weight: bold;
+        -webkit-text-stroke: 1px hsla(0, 0%, 100%, 0.5);
+        background-size: 250px 80px;
+        border: 1px solid $gray12;
+      }
+    }
+
+    .right {
+      display: flex;
+
+      &>button {
+        margin-left: 15px;
+        z-index: 1;
+        position: relative;
+        font-size: inherit;
+        font-family: inherit;
+        color: white;
+        padding: 0.5em 1em;
+        outline: none;
+        border: 1px solid #fff;
+        background-color: $gray12;
+        overflow: hidden;
+        transition: color 0.4s ease-in-out;
+
+        &::before {
+          content: '';
+          z-index: -1;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 1em;
+          height: 1em;
+          border-radius: 50%;
+          background-color: $primary-color;
+          transform-origin: center;
+          transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
+          transition: transform 0.45s ease-in-out;
+        }
+
+        &:hover {
+          cursor: pointer;
+          color: #161616;
+        }
+
+        &:hover::before {
+          transform: translate3d(-50%, -50%, 0) scale3d(15, 15, 15);
+        }
+      }
+    }
+  }
+
+  .content {
+    .page {
+      height: 100vh;
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+    }
+  }
+
+  .page_one {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    .logo {
+      letter-spacing: 30px;
+      line-height: 1em;
+      font-size: 100px;
+      color: transparent;
+      font-weight: bold;
+      -webkit-text-stroke: 1px #ffffff80;
+      background-size: 250px 80px;
+    }
+
+    .publicity,
+    .button {
+      margin-top: 30px;
+    }
+  }
+
+  .arrows {
+    position: absolute;
+    bottom: 0px;
+    font-size: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .page_two {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+  }
+}

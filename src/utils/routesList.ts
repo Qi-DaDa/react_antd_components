@@ -11,8 +11,16 @@ import Home from '../pages/home';
 import DivMethods from '../pages/div_methods';
 import DivVideo from '../pages/video';
 import DivMine from '../pages/mine';
+import DivIndex from '../layouts/index/index';
 // 页面路由
 export const pagesRoute = [
+  {
+    key: '/index',
+    path: '/',
+    exact: true,
+    title: 'DIV',
+    component: DivIndex,
+  },
   {
     key: '/login',
     path: '/login',
@@ -50,7 +58,6 @@ export const navsRoute = [
     title: '方法',
     component: DivMethods,
   },
-
   {
     key: '/div/video',
     path: '/div/vide',

@@ -1,7 +1,7 @@
 /*
  * @LastEditors: 七大大
  * @Date: 2020-08-18
- * @LastEditTime: 2020-09-21
+ * @LastEditTime: 2020-09-24
  * @FilePath: \myantdd:\products\react_antd_components\src\pages\home\index.tsx
  * @Description: 首页
  */
@@ -34,7 +34,21 @@ const DivHome = () => {
 
   useEffect(() => {
     getBingApi();
+    (document.getElementById('root') || window).addEventListener(
+      'scroll',
+      listenerScroll
+    );
   }, []);
+
+  // 滚动监听
+  const listenerScroll = () => {
+    let clientHeight = document.documentElement.clientHeight; // 可视区域高度
+    let scrollTop = document.documentElement.scrollTop; // 滚动条滚动高度
+    let scrollHeight = document.documentElement.scrollHeight; // 滚动内容高度
+    console.log('可视区域高度=>', clientHeight);
+    console.log('滚动内容高度=>', scrollHeight);
+    console.log('滚动条滚动高度=>', scrollTop);
+  };
 
   // 获取必应七图
   const getBingApi = async () => {
