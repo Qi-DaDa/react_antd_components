@@ -35,7 +35,6 @@ const TitleNav: React.FunctionComponent<any> = (props) => {
         className={styles.right}
         key={1}
       >
-        <div>tabs</div>
         <button onClick={onLogin}>注册/登录</button>
       </TweenOne>
     </TweenOne>

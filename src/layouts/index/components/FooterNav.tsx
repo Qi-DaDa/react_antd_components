@@ -13,15 +13,16 @@ const FooterNav: React.FunctionComponent<any> = (props) => {
       style={{
         height: 220,
         backgroundImage: `url(//bimgs.plmeizi.com/images/bing/2016/GoldenHouten_ZH-CN8874322377_1920x1080.jpg)`,
+
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
     >
-      <OverPack playScale={0.1} className={styles.page_two}>
-        <QueueAnim type="bottom" key="block" leaveReverse>
-          <div key={3}>发现高人气的直播带货播主</div>
-          <div key={4}>还原直播间人气和销量数据</div>
-          <div key={5}>监控直播正在购买人数</div>
+      <OverPack playScale={0.1}>
+        <QueueAnim type="top" key="block" leaveReverse>
+          <div key="footer" className={styles.footer_nav}>
+            DiV
+          </div>
         </QueueAnim>
       </OverPack>
     </div>

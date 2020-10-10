@@ -11,6 +11,7 @@ import Home from '../pages/home';
 import DivMethods from '../pages/div_methods';
 import DivVideo from '../pages/video';
 import DivMine from '../pages/mine';
+import HighOrderComponent from '../pages/HighOrderComponent';
 import DivIndex from '../layouts/index/index';
 // 页面路由
 export const pagesRoute = [
@@ -64,6 +65,13 @@ export const navsRoute = [
     exact: true,
     title: '视频',
     component: DivVideo,
+  },
+  {
+    key: '/div/high-order-component',
+    path: '/div/high-order-component',
+    exact: true,
+    title: '高阶组件',
+    component: HighOrderComponent,
   },
   {
     key: '/div/mine',

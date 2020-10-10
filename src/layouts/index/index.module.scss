@@ -80,6 +80,9 @@
       background-size: cover;
       background-attachment: fixed;
       background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 
@@ -115,10 +118,43 @@
   }
 
   .page_two {
-    height: 100%;
+    width: 920px;
+    height: 500px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    overflow: hidden;
+  }
+
+  .page_three {
+    width: 920px;
+    height: 500px;
+    line-height: 2em;
+    text-align: center;
+  }
+
+  .page_four {
+    width: 920px;
+    height: 300px;
+    line-height: 3em;
+    text-align: center;
+  }
+
+  .page_five {
+    width: 920px;
+    height: 500px;
+    line-height: 3em;
+    text-align: center;
+  }
+
+  .footer_nav {
+    height: 220px;
+    line-height: 220px;
+    letter-spacing: 15px;
+    text-align: center;
+    font-size: 40px;
+    color: transparent;
+    font-weight: bold;
+    -webkit-text-stroke: 1px hsla(0, 0%, 100%, 0.5);
+    background-size: 250px 80px;
   }
 }
