@@ -13,6 +13,7 @@ import DivVideo from '../pages/video';
 import DivMine from '../pages/mine';
 import HighOrderComponent from '../pages/HighOrderComponent';
 import DivIndex from '../layouts/index/index';
+import EchartMap from '../pages/EchartMap';
 // 页面路由
 export const pagesRoute = [
   {
@@ -72,6 +73,13 @@ export const navsRoute = [
     exact: true,
     title: '高阶组件',
     component: HighOrderComponent,
+  },
+  {
+    key: '/div/echart-map',
+    path: '/div/echart-map',
+    exact: true,
+    title: 'echart地图',
+    component: EchartMap,
   },
   {
     key: '/div/mine',

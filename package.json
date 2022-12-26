@@ -30,9 +30,12 @@
     "react-particles-js": "^3.3.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
+    "react-watermark-module": "^1.2.0",
     "sass-loader": "^9.0.3",
     "typescript": "~3.7.2",
-    "video-react": "^0.14.1"
+    "video-react": "^0.14.1",
+    "video.js": "^7.10.1",
+    "videojs-flash": "^2.2.1"
   },
   "scripts": {
     "start": "craco start",

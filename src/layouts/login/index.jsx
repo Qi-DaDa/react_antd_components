@@ -1,7 +1,7 @@
 /*
  * @LastEditors: 七大大
  * @Date: 2020-09-07
- * @LastEditTime: 2020-09-30
+ * @LastEditTime: 2020-10-29
  * @FilePath: \myantdd:\products\react_antd_components\src\layouts\login\index.jsx
  * @Description: 登录/注册页面
  */
@@ -28,10 +28,10 @@ const DivLogin = () => {
           <Create />
         </div>
       ) : (
-        <div className={styles.login_bell} onClick={() => setIsShow(true)}>
-          <PoweroffOutlined />
-        </div>
-      )}
+          <div className={styles.login_bell} onClick={() => setIsShow(true)}>
+            <PoweroffOutlined />
+          </div>
+        )}
     </div>
   );
 };

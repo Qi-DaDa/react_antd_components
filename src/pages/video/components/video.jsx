@@ -55,7 +55,9 @@ const ComVideo = () => {
         controls="controls"
       >
         <source
-          src={require('../../../assets/images/trailer_hd.mp4')}
+          // src={require('../../../assets/images/trailer_hd.mp4')}
+          src='http://vjs.zencdn.net/v/oceans.mp4'
+          // src={'https://l42.weseepro.com/live/iUr212su_JnpK8KO4x3pgse8JAqyR0UPneTeTkhuaeXhCNC9T2kIjPP0sfv_sCYWYyzARVKcyuMA0wL8gmg1BTGFQQkOHcVuIVkOMhVCORsVWo-xbMpSmTZyPgO0u0-F'}
           type="video/mp4"
         />
         <ControlBar autoHide={false} style={{ background: 'red' }}>

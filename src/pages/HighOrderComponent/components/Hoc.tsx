@@ -1,18 +1,26 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 const Hoc = (InnerComponent: any) => {
-  const [num, setNum] = useState(0);
+  // const [num, setNum] = useState(0);
   return (props: any) => {
-    console.log('HOC', props);
-    // const aref = useRef(null);
-    // console.log(aref);
+    const { props1, ...ohterProps } = props
+    // let aref = useRef(null);
+    // console.log(ohterProps, aref);
+    const aref = (info: any) => {
+      console.log(info);
+    }
+    console.log(InnerComponent);
 
     return (
-      <InnerComponent
-        {...props}
-        props1="333"
-        num={num}
-        onUpdata={() => setNum(num + 1)}
-      />
+      <div>
+        <p>9999</p>
+        <InnerComponent
+          // {...props}
+          // props1="333"
+          num={1}
+        // onUpdata={() => { setNum(num + 1) }}
+        // ref={aref}
+        />
+      </div>
     );
   };
 };

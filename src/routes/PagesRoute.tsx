@@ -1,8 +1,8 @@
 /*
  * @LastEditors: 七大大
  * @Date: 2020-09-07
- * @LastEditTime: 2020-09-08
- * @FilePath: \myantdd:\products\react_antd_components\src\routes\pagesRoute.tsx
+ * @LastEditTime: 2021-07-26
+ * @FilePath: \antd_prod:\products\react_antd_components\src\routes\PagesRoute.tsx
  * @Description: 路由导航
  */
 import React, { useState, useEffect } from 'react';
@@ -18,9 +18,9 @@ import DivLoading from '../components/CutomLoading';
 const PagesRoute: React.FunctionComponent<any> = (props) => {
   const [redirect, setRedirect] = useState(''); // 判度是否进入
   useEffect(() => {
-    setTimeout(() => {
-      setRedirect('/login');
-    }, 500);
+    // setTimeout(() => {
+    setRedirect('/login');
+    // }, 500);
   }, []);
   return redirect ? (
     <Router>
